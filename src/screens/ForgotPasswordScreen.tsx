@@ -40,11 +40,11 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
         label="E-mail address"
         returnKeyType="done"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: '' })}
+        onChangeText={(text) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
-        autoCompleteType="email"
+        autoComplete="email"
         textContentType="emailAddress"
         keyboardType="email-address"
       />

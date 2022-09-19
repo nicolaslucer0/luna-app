@@ -50,7 +50,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         label="Name"
         returnKeyType="next"
         value={name.value}
-        onChangeText={text => setName({ value: text, error: '' })}
+        onChangeText={(text) => setName({ value: text, error: '' })}
         error={!!name.error}
         errorText={name.error}
       />
@@ -59,11 +59,11 @@ const RegisterScreen = ({ navigation }: Props) => {
         label="Email"
         returnKeyType="next"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: '' })}
+        onChangeText={(text) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
-        autoCompleteType="email"
+        autoComplete="email"
         textContentType="emailAddress"
         keyboardType="email-address"
       />
@@ -72,7 +72,7 @@ const RegisterScreen = ({ navigation }: Props) => {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={text => setPassword({ value: text, error: '' })}
+        onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry

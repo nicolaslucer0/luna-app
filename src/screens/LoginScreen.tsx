@@ -43,11 +43,11 @@ const LoginScreen = ({ navigation }: Props) => {
         label="Email"
         returnKeyType="next"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: '' })}
+        onChangeText={(text) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
-        autoCompleteType="email"
+        autoComplete="email"
         textContentType="emailAddress"
         keyboardType="email-address"
       />
@@ -56,7 +56,7 @@ const LoginScreen = ({ navigation }: Props) => {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={text => setPassword({ value: text, error: '' })}
+        onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry

@@ -1,4 +1,8 @@
 {
   "name": "LunaApp",
-  "displayName": "LunaApp"
+  "displayName": "LunaApp",
+
+  "expo": {
+    "sdkVersion": "35.0.0"
+  }
 }

@@ -10,6 +10,7 @@
 
 import React, {type PropsWithChildren} from 'react';
 import {
+  AppRegistry,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -26,6 +27,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+AppRegistry.registerComponent('main', () => App);
 
 const Section: React.FC<
   PropsWithChildren<{

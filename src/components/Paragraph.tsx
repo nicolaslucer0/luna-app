@@ -1,20 +1,31 @@
 import React, { memo } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { theme } from '../core/theme';
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Paragraph = ({ children }: Props) => (
-  <Text style={styles.text}>{children}</Text>
+const Paragraph = () => (
+  <View style={styles.container}>
+    <Text style={styles.text1}>Si lo sentís,</Text>
+    <Text style={styles.text2}>importa</Text>
+  </View>
 );
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 16,
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  text1: {
+    fontSize: 26,
     lineHeight: 26,
     color: theme.colors.secondary,
+    textAlign: 'center',
+    marginBottom: 14,
+    marginRight: 5,
+  },
+  text2: {
+    fontSize: 26,
+    lineHeight: 26,
+    color: theme.colors.black,
     textAlign: 'center',
     marginBottom: 14,
   },

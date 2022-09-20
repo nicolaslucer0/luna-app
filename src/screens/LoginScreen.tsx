@@ -37,7 +37,7 @@ const LoginScreen = ({ navigation }: Props) => {
 
       <Logo />
 
-      <Header>Welcome back.</Header>
+      <Header>Luna</Header>
 
       <TextInput
         label="Email"
@@ -48,6 +48,7 @@ const LoginScreen = ({ navigation }: Props) => {
         errorText={email.error}
         autoCapitalize="none"
         autoComplete="email"
+        autoCorrect={false}
         textContentType="emailAddress"
         keyboardType="email-address"
       />
@@ -71,15 +72,8 @@ const LoginScreen = ({ navigation }: Props) => {
       </View>
 
       <Button mode="contained" onPress={_onLoginPressed}>
-        Login
+        Iniciar sesión
       </Button>
-
-      <View style={styles.row}>
-        <Text style={styles.label}>Don’t have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
-          <Text style={styles.link}>Sign up</Text>
-        </TouchableOpacity>
-      </View>
     </Background>
   );
 };

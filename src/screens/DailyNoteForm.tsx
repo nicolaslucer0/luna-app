@@ -28,7 +28,7 @@ const DailyNoteForm = ({ navigation }: Props) => {
   return (
     <Background>
       <TextInput
-        label="Email"
+        label="Situación"
         returnKeyType="next"
         value={email.value}
         onChangeText={(text) => setEmail({ value: text, error: '' })}
@@ -42,7 +42,7 @@ const DailyNoteForm = ({ navigation }: Props) => {
       />
 
       <TextInput
-        label="Password"
+        label="Motivo"
         returnKeyType="done"
         value={password.value}
         onChangeText={(text) => setPassword({ value: text, error: '' })}
@@ -52,7 +52,7 @@ const DailyNoteForm = ({ navigation }: Props) => {
       />
 
       <Button mode="contained" onPress={_onLoginPressed}>
-        Iniciar sesión
+        Guardar registro
       </Button>
     </Background>
   );

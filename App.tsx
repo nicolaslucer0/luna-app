@@ -7,7 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { LoginScreen } from './src/screens';
 
 export const App = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   return (
     <Provider theme={theme}>
       <NavigationContainer>

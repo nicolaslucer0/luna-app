@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-type Props = {
-  navigation: any;
-};
-
-export const NotificationScreen = ({ navigation }: Props) => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Button onPress={() => navigation.goBack()} title="Go back home" />
+export const NotificationScreen = () => (
+  <View style={styles.container}>
+    <Text>Notificaciones</Text>
   </View>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    width: '100%',
+    alignSelf: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+});

@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: 'white',
   },
 });

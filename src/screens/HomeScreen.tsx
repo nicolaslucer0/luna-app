@@ -16,7 +16,7 @@ const HomeScreen = ({ navigation }: Props) => (
     <Header>Luna</Header>
 
     <Paragraph />
-    <Button mode="contained" onPress={() => navigation.navigate('LoginScreen')}>
+    <Button mode="contained" onPress={() => navigation.navigate('Login')}>
       Iniciar sesión
     </Button>
   </Background>

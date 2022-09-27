@@ -1,26 +1,29 @@
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import {
-  HomeScreen,
-  LoginScreen,
-  RegisterScreen,
-  ForgotPasswordScreen,
-  Dashboard,
-} from './screens';
+const Drawer = createDrawerNavigator();
 
-const Router = createStackNavigator(
-  {
-    HomeScreen,
-    LoginScreen,
-    RegisterScreen,
-    ForgotPasswordScreen,
-    Dashboard,
-  },
-  {
-    initialRouteName: 'HomeScreen',
-    headerMode: 'none',
-  }
-);
+function DrawerContent() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Drawer content</Text>
+    </View>
+  );
+}
 
-export default createAppContainer(Router);
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
+
+export const Main = () => {
+  return (
+    <Drawer.Navigator drawerContent={() => <DrawerContent />}>
+      <Drawer.Screen name="Home" component={HomeScreen} />
+    </Drawer.Navigator>
+  );
+};

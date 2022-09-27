@@ -38,14 +38,14 @@ export function DrawerContent({ navigation }: DrawerContentComponentProps) {
               />
             )}
             label="Notificaciones"
-            onPress={() => navigation.navigate('Notifications')}
+            onPress={() => navigation.navigate('Notificaciones')}
           />
           <DrawerItem
             icon={({ color, size }) => (
               <MaterialCommunityIcons name="tune" color={color} size={size} />
             )}
             label="Registro diario"
-            onPress={() => navigation.navigate('DailyNotesForm')}
+            onPress={() => navigation.navigate('Registro Diario')}
           />
         </Drawer.Section>
         <Drawer.Section title="Preferences">

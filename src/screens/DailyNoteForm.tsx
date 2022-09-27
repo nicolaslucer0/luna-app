@@ -1,53 +1,61 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import Background from '../components/Background';
-import Logo from '../components/Logo';
-import Header from '../components/Header';
 import Button from '../components/Button';
+import TextInput from '../components/TextInput';
+import { emailValidator, passwordValidator } from '../core/utils';
 import { Navigation } from '../types';
-import { List } from 'react-native-paper';
 
 type Props = {
   navigation: Navigation;
 };
 
-const DailyNoteForm = ({ navigation }: Props) => (
-  <Background>
-    <Logo />
-    <Header>Let’s start</Header>
-    <List.Item
-      title="First Item"
-      description="Item description"
-      left={(props) => <List.Icon {...props} icon="folder" />}
-    />
-    <List.Item
-      title="First Item"
-      description="Item description"
-      left={(props) => <List.Icon {...props} icon="folder" />}
-    />
-    <List.Item
-      title="First Item"
-      description="Item description"
-      left={(props) => <List.Icon {...props} icon="folder" />}
-    />
-    <List.Item
-      title="First Item"
-      description="Item description"
-      left={(props) => <List.Icon {...props} icon="folder" />}
-    />
-    <List.Item
-      title="First Item"
-      description="Item description"
-      left={(props) => <List.Icon {...props} icon="folder" />}
-    />
-    <List.Item
-      title="First Item"
-      description="Item description"
-      left={(props) => <List.Icon {...props} icon="user" />}
-    />
-    <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>
-      Logout
-    </Button>
-  </Background>
-);
+const DailyNoteForm = ({ navigation }: Props) => {
+  const [email, setEmail] = useState({ value: '', error: '' });
+  const [password, setPassword] = useState({ value: '', error: '' });
+
+  const _onLoginPressed = () => {
+    const emailError = emailValidator(email.value);
+    const passwordError = passwordValidator(password.value);
+
+    if (emailError || passwordError) {
+      setEmail({ ...email, error: emailError });
+      setPassword({ ...password, error: passwordError });
+      return;
+    }
+
+    navigation.navigate('dailyNotes');
+  };
+  return (
+    <Background>
+      <TextInput
+        label="Email"
+        returnKeyType="next"
+        value={email.value}
+        onChangeText={(text) => setEmail({ value: text, error: '' })}
+        error={!!email.error}
+        errorText={email.error}
+        autoCapitalize="none"
+        autoComplete="email"
+        autoCorrect={false}
+        textContentType="emailAddress"
+        keyboardType="email-address"
+      />
+
+      <TextInput
+        label="Password"
+        returnKeyType="done"
+        value={password.value}
+        onChangeText={(text) => setPassword({ value: text, error: '' })}
+        error={!!password.error}
+        errorText={password.error}
+        secureTextEntry
+      />
+
+      <Button mode="contained" onPress={_onLoginPressed}>
+        Iniciar sesión
+      </Button>
+    </Background>
+  );
+};
 
 export default memo(DailyNoteForm);

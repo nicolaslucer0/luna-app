@@ -1,19 +1,68 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import { Card, Title, Paragraph } from 'react-native-paper';
+import Background from '../components/Background';
 
 export const NotificationScreen = () => (
-  <View style={styles.container}>
-    <Text>Notificaciones</Text>
-  </View>
+  <Background>
+    <ScrollView style={styles.scroll}>
+      <Card style={styles.card}>
+        <Card.Title title="asdasd" subtitle="Card Subtitle" />
+        <Card.Content>
+          <Title>Me pelee con mis padres </Title>
+          <Paragraph>Porque no me dejaron salir a bailar</Paragraph>
+        </Card.Content>
+      </Card>
+      <Card style={styles.card}>
+        <Card.Title title="Card Title" subtitle="Card Subtitle" />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+      <Card style={styles.card}>
+        <Card.Title title="Card Title" subtitle="Card Subtitle" />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+      <Card style={styles.card}>
+        <Card.Title title="Card Title" subtitle="Card Subtitle" />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+      <Card style={styles.card}>
+        <Card.Title title="Card Title" subtitle="Card Subtitle" />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+      <Card style={styles.card}>
+        <Card.Title title="Card Title" subtitle="Card Subtitle" />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+      </Card>
+    </ScrollView>
+  </Background>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
+  button: {
+    position: 'absolute',
+    right: 16,
+    bottom: 20,
+  },
+  card: {
     width: '100%',
-    alignSelf: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    marginBottom: '5%',
+  },
+  scroll: {
+    width: '100%',
   },
 });
